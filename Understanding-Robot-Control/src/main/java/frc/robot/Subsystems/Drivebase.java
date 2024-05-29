@@ -35,16 +35,28 @@ public class Drivebase extends SubsystemBase {
     leftDrive2.follow(leftDrive1);
     rightDrive2.follow(rightDrive1);
 
-    //    Left and Right Motors spin in the same direction
+    /*    Inverts left motors */
+    //      Makes Left motors spin in the same direction as right motors
     leftDrive1.setInverted(true);
-    leftDrive2.setInverted(true);
 
+    /*    Set Motor Idle Mode */
+    //      When motor a isn't being used it will be in this mode
+    //leftDrive1.setIdleMode();
+  }
+  //      Makes Motors spin forward
+  public void forward(){
+    leftDrive1.set(1);
+    rightDrive1.set(1);
+  }
+  //      Makes Motors spin backward
+  public void backward(){
+    leftDrive1.set(-1);
+    rightDrive1.set(-1);
   }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
   }
-  //      Makes Motors move forward
-
+  
 }
