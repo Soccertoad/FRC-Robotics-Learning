@@ -15,22 +15,30 @@ public class NeoMotor extends SubsystemBase {
   //      Creates a CANSparkMax
   private CANSparkMax motor;
 
-  /** Creates a new NeoMotor. */
+  /**   Creates a new NeoMotor. */
   public NeoMotor() {
+    //    Initalizing the CANSparkMax
+    //      Needs the CANSparkMax CAN ID, then the MotorType
     motor = new CANSparkMax(Constants.REVConstants.NEO_ID, MotorType.kBrushless);
   }
 
+  /*      Methods for making the Motor Spin*/
+  //        Spins the motor in a positive direction
   public void forward(){
+    //        Sets the speed of the motor to 1
     motor.set(Constants.REVConstants.FORWARD_SPEED);
   }
-
+  //        Spins the motor in a negative direction
   public void backward(){
+    //        Sets the speed of the motor to -1
     motor.set(Constants.REVConstants.BACKWARD_SPEED);
   }
-
+  //        Stops the motor
   public void StopMotor(){
+    //        Sets the speed of the motor to 0
     motor.set(Constants.REVConstants.STOP_SPEED);
   }
+  
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
