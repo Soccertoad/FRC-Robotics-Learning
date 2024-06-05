@@ -34,11 +34,11 @@ public class NeoMotor extends SubsystemBase {
     motor.set(Constants.REVConstants.BACKWARD_SPEED);
   }
   //        Stops the motor
-  public void StopMotor(){
+  public void stopmotor(){
     //        Sets the speed of the motor to 0
     motor.set(Constants.REVConstants.STOP_SPEED);
   }
-  
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run

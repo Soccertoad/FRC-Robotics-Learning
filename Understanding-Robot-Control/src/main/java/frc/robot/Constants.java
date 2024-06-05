@@ -8,7 +8,7 @@ package frc.robot;
 public final class Constants {
     /*      Constants for Drivebase */
     public static class DriveConstants{
-        /*       Drive Motor ID's */
+        /*      Drive Motor ID's */
         //          Left Drive ID's
         public static final int leftDrive1_ID = 1;
         public static final int leftDrive2_ID = 2; 
@@ -17,7 +17,12 @@ public final class Constants {
         public static final int rightDrive2_ID = 4;
 
     }
+    /*      Constants for Controllers */
     public static class ControlConstants{
-        public static final int 
+        /*      Xbox Controllers Driverstation Ports */
+        //          Driver Controller
+        public static final int XBOX_CONTROLLER_DRIVER_PORT = 0;
+        //          Operator Controller
+        public static final int XBOX_CONTROLLER_OPERATOR_PORT = 1;
     }
 }
