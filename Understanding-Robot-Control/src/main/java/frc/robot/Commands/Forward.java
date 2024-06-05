@@ -32,6 +32,7 @@ public class Forward extends Command {
   public void execute() {
     //      Calls the forward method from the Drivebase subsystem
     drivebase.forward();
+    endCommand = true;
   }
 
   //    Called once the command ends or is interrupted.
