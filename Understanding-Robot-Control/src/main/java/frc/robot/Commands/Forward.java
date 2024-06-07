@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Subsystems.Drivebase;
 
 public class Forward extends Command {
-  /*    Creating Variables */
+  /*    Declaring Variables */
   //      Creates Drivebase subsystem
   private Drivebase drivebase;
   //      Creates Boolean that ends the command
@@ -32,6 +32,7 @@ public class Forward extends Command {
   public void execute() {
     //      Calls the forward method from the Drivebase subsystem
     drivebase.forward();
+    //      Updates endCommand to end the command
     endCommand = true;
   }
 

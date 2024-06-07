@@ -13,7 +13,7 @@ public class Controls {
     //              Operator Controller
     public static XboxController xbox_operator = new XboxController(Constants.ControlConstants.XBOX_CONTROLLER_OPERATOR_PORT);
     
-    /**     Creates Command Xbox COntroller
+    /**     Creates Command Xbox Controller
      *          Maps commands to Xbox Controller inputs
     */
     //              Driver Controller

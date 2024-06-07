@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Subsystems.Drivebase;
 
 public class Backward extends Command {
-  /*    Creating Variables */
+  /*    Declaring Variables */
   //      Creates Drivebase subsystem
   private Drivebase drivebase;
   //      Creates Boolean that ends the command
@@ -32,6 +32,8 @@ public class Backward extends Command {
   public void execute() {
     //      Calls the backward method from the Drivebase subsystem
     drivebase.backward();
+    //      Updates endCommand to end the command
+    endCommand = true;
   }
 
   //    Called once the command ends or is interrupted.
