@@ -14,6 +14,7 @@ import frc.robot.Subsystems.Drivebase;
 //      Command Imports
 import frc.robot.Commands.Backward;
 import frc.robot.Commands.Forward;
+import frc.robot.Commands.XboxMove;
 //      Robot Imports
 import frc.robot.Controls;
 
@@ -27,20 +28,25 @@ public class RobotContainer {
   /*  Creates Subsystems */
   //    Creates Drivebase subsystem
   private final Drivebase drivebase = new Drivebase();
+  /*  Creates Commands */
+  //    Creates XboxMove Command
+  private final XboxMove xboxmove = new XboxMove(drivebase);
 
   public RobotContainer() {
+    drivebase.setDefaultCommand(xboxmove);
     configureBindings();
   }
 
   private void configureBindings() {
     /*  Maps the Controller buttons to Commands */
     /*    Driver */
-    //      Runs forward command while the driver controllers right trigger is pressed 
-    driver.rightTrigger().whileTrue(new Forward(drivebase));
-    //      Runs backward command while the driver controllers left trigger is pressed
-    driver.leftTrigger().whileTrue(new Backward(drivebase));
-    
+   
     /*    Operator */
+    //      Runs forward command while the operator controllers right trigger is pressed 
+    operator.rightTrigger().whileTrue(new Forward(drivebase));
+    //      Runs backward command while the operator controllers left trigger is pressed
+    operator.leftTrigger().whileTrue(new Backward(drivebase));
+    
   }
 
   public Command getAutonomousCommand() {
