@@ -16,6 +16,15 @@ public final class Constants {
         public static final int rightDrive1_ID = 3;
         public static final int rightDrive2_ID = 4;
 
+        /**      Driving Constants */
+        //          Sensitivity 
+        public static final double NORMAL_SENSITIVITY = 1.0;
+        public static final double PRECISION_SENSITIVITY = 0.4;
+        public static final double SPIN_SENSITIVITY = 0.8;
+        //          Speeds
+        public static final int STOP_SPEED = 0;
+        public static final double FULL_SPEED = 1.0;
+        
     }
     /*      Constants for Controllers */
     public static class ControlConstants{
@@ -24,5 +33,12 @@ public final class Constants {
         public static final int XBOX_CONTROLLER_DRIVER_PORT = 0;
         //          Operator Controller
         public static final int XBOX_CONTROLLER_OPERATOR_PORT = 1;
+
+        /*      Controller Button Constants */
+        //          Prevent Minor Controller Drift
+        public static final double CONTROLLER_DEADZONE = 0.05;
+        //          Inverses the Direction
+        public static final int INVERSE_DIRECTION = -1;
+        
     }
 }

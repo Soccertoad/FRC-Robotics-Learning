@@ -4,11 +4,15 @@
 
 package frc.robot.Subsystems;
 
+/*  Imports  */
 //    REV Imports
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkBase.ControlType;
+import com.revrobotics.CANSparkBase.IdleMode;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 //    WPI Imports
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+//    Robot Imports
 import frc.robot.Constants;
 
 public class Drivebase extends SubsystemBase {
@@ -40,8 +44,9 @@ public class Drivebase extends SubsystemBase {
     leftDrive1.setInverted(true);
 
     /*    Set Motor Idle Mode */
-    //      When motor a isn't being used it will be in this mode
-    //leftDrive1.setIdleMode();
+    //      Makes motors default mode to brake
+    leftDrive1.setIdleMode(IdleMode.kBrake);
+    rightDrive1.setIdleMode(IdleMode.kBrake);
   }
   //      Makes Motors spin forward
   public void forward(){
@@ -53,7 +58,11 @@ public class Drivebase extends SubsystemBase {
     leftDrive1.set(-1);
     rightDrive1.set(-1);
   }
- 
+  //      Makes Motors spin at adjustable speeds
+  public void drive(double left, double right){
+    leftDrive1.set(left);
+    rightDrive1.set(right);
+  }
 
   @Override
   public void periodic() {
