@@ -3,9 +3,13 @@ package frc.robot;
 public class Constants {
     /*      Constants for Controllers */
     public static class ControlConstants{
-        /*      Controller */
-        public static final int DRIVER_USBPORT = 
+        /*      Xbox Controllers Driverstation Ports */
+        //          Driver Controller
+        public static final int XBOX_CONTROLLER_DRIVER_PORT = 0;
+        //          Operator Controller
+        public static final int XBOX_CONTROLLER_OPERATOR_PORT = 1;
     }
+    
     /*      Constants for Rev Motor */
     public static class REVConstants{
         //      CANSparkMax ID

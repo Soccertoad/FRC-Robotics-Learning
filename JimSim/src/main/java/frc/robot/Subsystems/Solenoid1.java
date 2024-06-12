@@ -5,30 +5,25 @@
 package frc.robot.Subsystems;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Solenoid1 extends SubsystemBase {
 
-  private DoubleSolenoid doubleSolenoid;
-  private Solenoid solenoid;
+  DoubleSolenoid solenoid2x;
 
   /** Creates a new Solinoid. */
   public Solenoid1() {
-    doubleSolenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
-    solenoid = new Solenoid(PneumaticsModuleType.CTREPCM, 1);
+   solenoid2x = new DoubleSolenoid(1, PneumaticsModuleType.CTREPCM, 0, 1);
+
   }
 
-  public void solenoidForward(){
-    doubleSolenoid.set(DoubleSolenoid.Value.kForward);
-    doubleSolenoid.toggle();
-    
-    solenoid.toggle();
+  public void Outward(){
+   solenoid2x.set(Value.kForward);
   }
-  public void solenoidReverse(){
-    doubleSolenoid.set(DoubleSolenoid.Value.kReverse);
-    doubleSolenoid.toggle();
+  public void Retract(){
+   solenoid2x.set(Value.kReverse);
   }
 
   @Override
