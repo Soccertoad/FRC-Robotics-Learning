@@ -38,6 +38,11 @@ public class NeoMotor extends SubsystemBase {
     //        Sets the speed of the motor to 0
     motor.set(Constants.REVConstants.STOP_SPEED);
   }
+  //        Spins the motor at adjustable speed
+  public void motorMove(double speed){
+    //        Sets the speed of the motor
+    motor.set(speed);
+  }
 
   @Override
   public void periodic() {

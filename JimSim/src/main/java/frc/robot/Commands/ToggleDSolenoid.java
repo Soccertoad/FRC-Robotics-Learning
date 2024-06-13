@@ -4,8 +4,11 @@
 
 package frc.robot.Commands;
 
+/*  Imports */
+/*    WPI */
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj2.command.Command;
+/*    Subsystem */
 import frc.robot.Subsystems.DSolenoid;
 
 public class ToggleDSolenoid extends Command {

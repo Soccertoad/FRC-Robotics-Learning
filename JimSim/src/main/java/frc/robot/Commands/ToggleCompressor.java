@@ -4,15 +4,24 @@
 
 package frc.robot.Commands;
 
+/*  Imports */
+/*    WPI */
 import edu.wpi.first.wpilibj2.command.Command;
+/*    Subsystem */
 import frc.robot.Subsystems.Compresor;
 
 public class ToggleCompressor extends Command {
-  Compresor compresor;
-  boolean endCommand;
+  /*  Declaring Vaiables */
+  //    Compressor Subsystem
+  private Compresor compresor;
+  //    End Command
+  private boolean endCommand;
+
   /** Creates a new ToggleCompressor. */
   public ToggleCompressor(Compresor m_compresor) {
+    //  Sets local variable to global variable
     compresor = m_compresor;
+
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(compresor);
   }
@@ -20,6 +29,7 @@ public class ToggleCompressor extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    //  Sets End Command to false
     endCommand = false;
   }
 
@@ -28,9 +38,10 @@ public class ToggleCompressor extends Command {
   public void execute() {
     if (compresor.getCompressor()){
       compresor.disable();
-    } else{
+    } else {
       compresor.enable();
     }
+
     endCommand = true;
   }
 
