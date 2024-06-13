@@ -4,28 +4,39 @@
 
 package frc.robot;
 
+/*  Imports */
+/*    WPI */
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
-import frc.robot.Subsystems.Solenoid1;
-import frc.robot.Commands.SolenoidIn;
-import frc.robot.Commands.SolenoidOut;
+/*    Robot */
 import frc.robot.Controls;
+/*      Subsystems */
+import frc.robot.Subsystems.Compresor;
+import frc.robot.Subsystems.DSolenoid;
+/*      Commands */
+import frc.robot.Commands.ToggleCompressor;
+import frc.robot.Commands.ToggleDSolenoid;
+
 
 public class RobotContainer {
+  /*  Declaring Variables */
+  /*    Controllers */
+  private final CommandXboxController operator = Controls.operator;
 
-  private final Solenoid1 solenoid2x = new Solenoid1();
-    private final CommandXboxController operator = Controls.operator;
-
+  /*    Subsystem*/
+  private final DSolenoid dSolenoid = new DSolenoid();
+  private final Compresor compresor = new Compresor();
 
   public RobotContainer() {
     configureBindings();
   }
 
   private void configureBindings() {
-    operator.a().onTrue(new SolenoidIn(solenoid2x));
-    operator.b().onTrue(new SolenoidOut(solenoid2x));
-    
+
+    operator.a().onTrue(new ToggleDSolenoid(dSolenoid));
+    operator.b().onTrue(new ToggleCompressor(compresor));
+
   }
 
   public Command getAutonomousCommand() {

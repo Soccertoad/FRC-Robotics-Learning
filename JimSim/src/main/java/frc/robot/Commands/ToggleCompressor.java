@@ -5,29 +5,32 @@
 package frc.robot.Commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.Subsystems.Solenoid1;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
+import frc.robot.Subsystems.Compresor;
 
-
-public class SolenoidOut extends Command {
-  Solenoid1 solenoid2x;
-  boolean endCommand = false;
-  /** Creates a new ToggleSolenoid. */
-  public SolenoidOut(Solenoid1 m_solenoid2x) {
-    solenoid2x = m_solenoid2x;
+public class ToggleCompressor extends Command {
+  Compresor compresor;
+  boolean endCommand;
+  /** Creates a new ToggleCompressor. */
+  public ToggleCompressor(Compresor m_compresor) {
+    compresor = m_compresor;
     // Use addRequirements() here to declare subsystem dependencies.
-  addRequirements(solenoid2x);
+    addRequirements(compresor);
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+    endCommand = false;
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    solenoid2x.Outward();
-
+    if (compresor.getCompressor()){
+      compresor.disable();
+    } else{
+      compresor.enable();
+    }
     endCommand = true;
   }
 

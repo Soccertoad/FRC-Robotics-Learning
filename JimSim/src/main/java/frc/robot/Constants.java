@@ -23,6 +23,21 @@ public class Constants {
         //          Stoping the Motor
         public static final int STOP_SPEED = 0;
 
+    }
+    /*      Constants for DoubleSolenoid */
+    public static class DoubleSolenoidConstants{
+        //
+        public static final int D_SOLENOID_MODULE_ID = 1;
+        //
+        public static final int FORWARD_CHANNEL = 0;
+        //
+        public static final int REVERSE_CHANNEL = 1;
+
+    }
+    /*      Constants for Compressor */
+    public static class CompressorConstants{
+        //
+        public static final int COMPRESSOR_MODULE_ID = 1;
 
     }
     /*      Constants for CTRE Motor */
