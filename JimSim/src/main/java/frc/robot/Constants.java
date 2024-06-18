@@ -26,7 +26,7 @@ public class Constants {
     }
     /*      Constants for DoubleSolenoid */
     public static class DoubleSolenoidConstants{
-        //
+        //      
         public static final int D_SOLENOID_MODULE_ID = 1;
         //
         public static final int FORWARD_CHANNEL = 0;
@@ -39,6 +39,26 @@ public class Constants {
         //
         public static final int COMPRESSOR_MODULE_ID = 1;
 
+    }
+    /*      Constants for LEDLights */
+    public static class LEDLightsConstants{
+        //
+        public static final int LEDLIGHTS_PORT = 1;
+        //
+        public static final int LEDLIGHTS_LENGTH = 20;
+
+        public static class LEDColorsConstants{
+            //
+            public static final int PURPLE_R = 68;
+            //
+            public static final int PURPLE_G = 4;
+            //
+            public static final int PURPLE_B = 140;
+            //
+            public static final int RAINBOW_SAT = 255;
+            //
+            public static final int RAINBOW_VAL = 128;
+        }
     }
     /*      Constants for CTRE Motor */
     public static class CTREConstants{

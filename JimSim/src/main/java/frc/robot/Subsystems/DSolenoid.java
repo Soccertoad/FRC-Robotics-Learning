@@ -16,7 +16,7 @@ import frc.robot.Constants.DoubleSolenoidConstants;;
 public class DSolenoid extends SubsystemBase {
   /*  Declaring Variables*/
   //    Creates Double Solenoid
-  DoubleSolenoid doubleSolenoid;
+  private DoubleSolenoid doubleSolenoid;
 
   /** Creates a new DSolenoid. */
   public DSolenoid() {
