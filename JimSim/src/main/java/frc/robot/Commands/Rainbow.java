@@ -29,7 +29,8 @@ public class Rainbow extends Command {
   public void execute() {
 
     ledLights.rainbow();
-
+    ledLights.setData();
+    
     endCommand = true;
   }
 

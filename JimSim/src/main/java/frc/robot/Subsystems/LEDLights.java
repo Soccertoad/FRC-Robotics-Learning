@@ -59,7 +59,6 @@ public class LEDLights extends SubsystemBase {
       
       LEDBuffer.setHSV(i, hue, LEDColorsConstants.RAINBOW_SAT, LEDColorsConstants.RAINBOW_VAL);
 
-      lightLED.setData(LEDBuffer);
     }
 
     
@@ -74,6 +73,9 @@ public class LEDLights extends SubsystemBase {
       LEDBuffer.setHSV(i, hue, LEDColorsConstants.RAINBOW_SAT, LEDColorsConstants.RAINBOW_VAL);
     }
 
+    lightLED.setData(LEDBuffer);
+  }
+  public void setData(){
     lightLED.setData(LEDBuffer);
   }
   @Override
